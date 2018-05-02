@@ -4,19 +4,19 @@ function getrandomnumber(min,max) {
 
 $(document).ready(function () {
     $('#tsfd').hide();
-    var rand = getrandomnumber(1,100);
+    let rand = getrandomnumber(1,100);
 
-    var guesspanel = $('#guesspanel');
-    var hintpanel = $('#hintpanel');
+    let guesspanel = $('#guesspanel');
+    let hintpanel = $('#hintpanel');
 
-    var input = $('#gno');
-    var guessbtn = $('#gbtn');
+    let input = $('#gno');
+    let guessbtn = $('#gbtn');
 
-    var cbox = $('.switch input');
-    var ischecked = true;
-    var toohigh = false,toolow=false;
-    var diffbox = $('input[name=radio]:radio');
-    var max = $('#max');
+    let cbox = $('.switch input');
+    let ischecked = true;
+    let toohigh = false,toolow=false;
+    let diffbox = $('input[name=radio]:radio');
+    let max = $('#max');
     input.on('keyup',function (event) {
        if(event.keyCode===13){
            guessbtn.click();
@@ -33,9 +33,9 @@ $(document).ready(function () {
             $('#tsfd').hide();
         }
     });
-    var maxstr = '';
+    let maxstr = '';
     diffbox.change(function () {
-        var diff = $('input[name=radio]:checked').val();
+        let diff = $('input[name=radio]:checked').val();
         $('#resetbtn').click();
         switch (diff){
             case '0':
@@ -76,14 +76,17 @@ $(document).ready(function () {
 
 
 
-    var end=false;
-    var nog=10;
-    var count=0;
+    let end=false;
+    let nog=10;
+    let count=0;
     (guessbtn).click(function () {
-        $('.hbox').hide();
+        let gval = input.val();
+  		console.log(count);
+
+        if(String(gval)!=''&&count<11&&end==false) {
+        	$('.hbox').hide();
         $('#diffchoose').hide();
         count++;
-        var gval = input.val();
 
         if(gval<rand){
             toohigh = false;
@@ -99,7 +102,7 @@ $(document).ready(function () {
             $("#myModal").modal();
             end=true;
         }
-        var msg='';
+        let msg='';
         if(toohigh==true){
             msg='Too High';
         }
@@ -108,17 +111,17 @@ $(document).ready(function () {
         }
 
 
-        var prod=1,cdig=null;
+        let prod=1,cdig=null;
 
-        var randstr = rand.toString();
-        for(var i=0;i<randstr.length;i++){
+        let randstr = rand.toString();
+        for(let i=0;i<randstr.length;i++){
             prod = prod*parseInt(randstr[i]);
         }
-        var r2 = Math.floor(Math.random()*randstr.length);
+        let r2 = Math.floor(Math.random()*randstr.length);
         cdig = randstr[r2];
 
 
-        var div2,div3,div5,product,condigit;
+        let div2,div3,div5,product,condigit;
         if(rand%2==0){
             div2="The number is even.";
         }
@@ -144,12 +147,13 @@ $(document).ready(function () {
         condigit = cdig+" is one of the digits of the number.";
 
         if(count==10){
+        	$('#lost_msg').text('The number was '+gval);
             $("#myModal2").modal();
         }
-
-        if(gval.toString()!=''&&count<11&&end==false) {
             $('.gcontent').append('<h4>'+gval+'('+msg+')'+'<h4>');
             if(ischecked){
+        	console.log('yes');
+
                 switch(nog){
                     case 10:
                         $('.hcontent').append('<h4>'+div2+'<h4>');
@@ -187,11 +191,12 @@ $(document).ready(function () {
        $('.gcontent').empty();
        $('.hcontent').empty();
        count=0;
+       nog=10;
         $('#guesses').text(count);
         $('.hbox').show();
         $('#diffchoose').show();
 
-        var diff = $('input[name=radio]:checked').val();
+        let diff = $('input[name=radio]:checked').val();
         if(diff=='0'){
             $('.hbox').hide();
         }
