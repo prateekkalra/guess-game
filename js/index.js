@@ -81,9 +81,10 @@ $(document).ready(function () {
     let count=0;
     (guessbtn).click(function () {
         let gval = input.val();
-  		console.log(count);
+  		/*console.log(count);
+  		console.log(nog);*/
 
-        if(String(gval)!=''&&count<11&&end==false) {
+        if(String(gval)!=''&&count<10&&end==false) {
         	$('.hbox').hide();
         $('#diffchoose').hide();
         count++;
@@ -152,8 +153,6 @@ $(document).ready(function () {
         }
             $('.gcontent').append('<h4>'+gval+'('+msg+')'+'<h4>');
             if(ischecked){
-        	console.log('yes');
-
                 switch(nog){
                     case 10:
                         $('.hcontent').append('<h4>'+div2+'<h4>');
@@ -192,6 +191,7 @@ $(document).ready(function () {
        $('.hcontent').empty();
        count=0;
        nog=10;
+       end=false;
         $('#guesses').text(count);
         $('.hbox').show();
         $('#diffchoose').show();
