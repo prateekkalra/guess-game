@@ -148,7 +148,7 @@ $(document).ready(function () {
         condigit = cdig+" is one of the digits of the number.";
 
         if(count==10){
-        	$('#lost_msg').text('The number was '+gval);
+        	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
             $('.gcontent').append('<h4>'+gval+'('+msg+')'+'<h4>');
