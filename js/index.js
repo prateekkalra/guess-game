@@ -187,7 +187,7 @@ $(document).ready(function () {
    });
 
     $('#resetbtn').click(function () {
-       $('.gcontent').empty();
+      /* $('.gcontent').empty();
        $('.hcontent').empty();
        count=0;
        nog=10;
@@ -199,7 +199,9 @@ $(document).ready(function () {
         let diff = $('input[name=radio]:checked').val();
         if(diff=='0'){
             $('.hbox').hide();
-        }
+        }*/
+        //Refresh Page rather than manual refresh due to some issues 
+        location.reload();
 
 
     });
