@@ -36,7 +36,7 @@ $(document).ready(function () {
     let maxstr = '';
     diffbox.change(function () {
         let diff = $('input[name=radio]:checked').val();
-        $('#resetbtn').click();
+        // $('#resetbtn').click();
         switch (diff){
             case '0':
                 rand = getrandomnumber(1,10);
@@ -209,6 +209,9 @@ $(document).ready(function () {
 
 
     $('#clw').click(function () {
+        $('#resetbtn').click();
+    });
+    $('#cll').click(function () {
         $('#resetbtn').click();
     });
 
