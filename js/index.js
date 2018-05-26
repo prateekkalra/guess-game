@@ -73,9 +73,7 @@ $(document).ready(function () {
         }
         max.html(maxstr);
     });
-
-
-
+    
     let end=false;
     let nog=10;
     let count=0;
@@ -104,13 +102,15 @@ $(document).ready(function () {
             end=true;
         }
         let msg='';
-        if(toohigh==true){
+        if(toohigh==true && !end){
             msg='Too High';
         }
-        else{
+        else if(toolow==true && !end){
             msg='Too Low';
         }
-
+		else{
+			msg='Correct';
+		}
 
         let prod=1,cdig=null;
 
@@ -120,7 +120,6 @@ $(document).ready(function () {
         }
         let r2 = Math.floor(Math.random()*randstr.length);
         cdig = randstr[r2];
-
 
         let div2,div3,div5,product,condigit;
         if(rand%2==0){
@@ -171,19 +170,11 @@ $(document).ready(function () {
                         break;
                 }
             }
-
             nog--;
             $('#guesses').text(count);
-
         }
-
-
-
-
-
-
+        
         input.val(null);
-
    });
 
     $('#resetbtn').click(function () {
