@@ -10,7 +10,8 @@ body{
     /*width: 700px;*/
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
+    padding: 18.5px;
+    margin-bottom: 20px;
 }
 
 #mainpanel{
@@ -36,6 +37,9 @@ body{
     border-radius: 500px;
 }
 
+.center-block {
+    margin-top: 18.5px;
+}
 
 
 
@@ -182,3 +186,17 @@ input:checked + .slider:before {
 }
 
 
+@media only screen and (max-width: 991px) {
+    #hintpanel {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #hintpanel-sm {
+        display: none;
+    }
+    #mainpanel {
+        padding-top: 130px;
+    }
+}

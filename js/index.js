@@ -3,11 +3,12 @@ function getrandomnumber(min,max) {
 }
 
 $(document).ready(function () {
-    $('#tsfd').hide();
+    $('.tsfd').hide();
     let rand = getrandomnumber(1,100);
 
     let guesspanel = $('#guesspanel');
     let hintpanel = $('#hintpanel');
+    let hintpanelsm = $('#hintpanel-sm');
 
     let input = $('#gno');
     let guessbtn = $('#gbtn');
@@ -26,11 +27,13 @@ $(document).ready(function () {
         ischecked = cbox.is(":checked");
         if(!ischecked) {
             hintpanel.css("background-color", "black");
-            $('#tsfd').show();
+            hintpanelsm.css("background-color", "black");
+            $('.tsfd').show();
         }
         else {
             hintpanel.css("background-color","white");
-            $('#tsfd').hide();
+            hintpanelsm.css("background-color","white");
+            $('.tsfd').hide();
         }
     });
     let maxstr = '';
