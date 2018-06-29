@@ -100,6 +100,7 @@ $(document).ready(function () {
         else{
             $("#myModal").modal();
             end=true;
+            return;
         }
         let msg='';
         if(toohigh==true && !end){
