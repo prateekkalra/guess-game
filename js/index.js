@@ -73,10 +73,11 @@ $(document).ready(function () {
         }
         max.html(maxstr);
     });
-    
+
     let end=false;
     let nog=10;
     let count=0;
+    let guessed = false;
     (guessbtn).click(function () {
         let gval = input.val();
   		/*console.log(count);
@@ -100,6 +101,7 @@ $(document).ready(function () {
         else{
             $("#myModal").modal();
             end=true;
+            guessed=true;
         }
         let msg='';
         if(toohigh==true && !end){
@@ -146,7 +148,7 @@ $(document).ready(function () {
         product = "Product of the digits is "+prod+".";
         condigit = cdig+" is one of the digits of the number.";
 
-        if(count==10){
+        if(count==10 && guessed === false){
         	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
@@ -173,7 +175,7 @@ $(document).ready(function () {
             nog--;
             $('#guesses').text(count);
         }
-        
+
         input.val(null);
    });
 
@@ -191,7 +193,7 @@ $(document).ready(function () {
         if(diff=='0'){
             $('.hbox').hide();
         }*/
-        //Refresh Page rather than manual refresh due to some issues 
+        //Refresh Page rather than manual refresh due to some issues
         location.reload();
 
 
