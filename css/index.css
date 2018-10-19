@@ -4,7 +4,7 @@ body{
 }
 
   #guesspanel{
-    margin-left: 6vw;
+    margin-left: 6.5vw;
   }
 .blocks{
     background-color: white;
@@ -19,6 +19,7 @@ body{
 
 #mainpanel{
     padding: 60px;
+    padding-top: 130px;
     background-color: #FF6766 ;
 }
 
@@ -103,6 +104,7 @@ input:checked + .slider:before {
 #diffSelect{
   padding-top: 30px;
 }
+
 /*HINT SWITCH*/
 
 
@@ -135,14 +137,58 @@ input:checked + .slider:before {
        font-size: 18px !important;
        margin-top: 10px;
      }
+     h4{
+       font-size: 15px;
+     }
     .container {
       margin-left: 10px;
-      font-size: 18px;
+      font-size: 15px;
       margin-left: 30px;
       display: inline-block;
     }
     #diffSelect{
       padding-top: 10px;
+    }
+    #resetbtn{
+      font-size: 15px;
+    }
+    .checkmark{
+      height: 20px !important;
+      width: 20px !important;
+    }
+    .container .checkmark:after {
+        top: 6px !important;
+        left: 6px !important;
+    }
+    #guesspanel{
+      margin-left: 0;
+    }
+    .blocks{
+      min-height: 100px;
+    }
+    #mainpanel{
+      padding-top: 15px;
+      padding-bottom: 10px;
+      height: 60px !important;
+      margin-left: 7.5vw;
+      margin-top: 10px;
+    }
+    #gno{
+      width: 100%;
+    }
+    #gbtn{
+      font-size: 15px;
+    }
+    #guesspanel, #hintpanel{
+      height: 250px;
+      margin-top: 0px;
+      overflow: scroll;
+    }
+    #guesspanel{
+      margin-left: 5vw;
+    }
+    #hintpanel{
+      margin-left: 0px;
     }
 }
 
