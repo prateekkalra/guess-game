@@ -2,6 +2,10 @@ body{
     background-color: #e2e1e0;
     font-family:Volkhov;
 }
+
+  #guesspanel{
+    margin-left: 6vw;
+  }
 .blocks{
     background-color: white;
     height: auto;
@@ -95,6 +99,10 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+#diffSelect{
+  padding-top: 30px;
+}
 /*HINT SWITCH*/
 
 
@@ -113,6 +121,29 @@ input:checked + .slider:before {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+       font-size: 25px !important;
+       margin-top: 10px;
+     }
+    h2 {
+      font-size: 20px !important;
+    }
+    h3 {
+       font-size: 18px !important;
+       margin-top: 10px;
+     }
+    .container {
+      margin-left: 10px;
+      font-size: 18px;
+      margin-left: 30px;
+      display: inline-block;
+    }
+    #diffSelect{
+      padding-top: 10px;
+    }
 }
 
 /* Hide the browser's default radio button */
@@ -180,5 +211,3 @@ input:checked + .slider:before {
     margin-top:2%;
     right: 5%;
 }
-
-
