@@ -79,8 +79,8 @@ $(document).ready(function () {
     let count=0;
     (guessbtn).click(function () {
         let gval = input.val();
-  		/*console.log(count);
-  		console.log(nog);*/
+  		// console.log(count);
+  		// console.log(nog);
 
         if(String(gval)!=''&&count<10&&end==false) {
         	$('.hbox').hide();
@@ -146,7 +146,7 @@ $(document).ready(function () {
         product = "Product of the digits is "+prod+".";
         condigit = cdig+" is one of the digits of the number.";
 
-        if(count==10){
+        if(count==10&&end==false){
         	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
