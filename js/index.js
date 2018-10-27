@@ -146,7 +146,7 @@ $(document).ready(function () {
         product = "Product of the digits is "+prod+".";
         condigit = cdig+" is one of the digits of the number.";
 
-        if(count==10){
+        if(count==10 && !end){    /* Added !end here because when I guessed correct in my 10th chance it showed both win and lose */
         	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
