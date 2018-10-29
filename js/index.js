@@ -17,6 +17,7 @@ $(document).ready(function () {
     let toohigh = false,toolow=false;
     let diffbox = $('input[name=radio]:radio');
     let max = $('#max');
+    let mouseX = 0;
     input.on('keyup',function (event) {
        if(event.keyCode===13){
            guessbtn.click();
@@ -206,6 +207,19 @@ $(document).ready(function () {
     });
     $('#cll').click(function () {
         $('#resetbtn').click();
+    });
+    $('.switch').mousedown(function () {
+        mouseX = event.clientX;
+    });
+    $('.switch').mouseup(function () {
+        if (mouseX && (event.clientX < mouseX && !ischecked || event.clientX > mouseX && ischecked))
+            cbox.click();
+        mouseX = 0;
+    });
+    $('body').mouseup(function () {
+        if (mouseX && (event.clientX < mouseX && ischecked || event.clientX > mouseX && !ischecked))                   
+            cbox.click();
+        mouseX = 0; 
     });
 
 });
