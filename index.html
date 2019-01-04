@@ -10,7 +10,7 @@
 <body>
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-xs-3 text-center" style="padding-top: 30px">
+            <div class="col-md-4 text-center" style="padding-top: 30px">
                 <div id="diffchoose">
                     <label class="container">Easy
                         <input type="radio"  name="radio" class="dif" value="0">
@@ -31,7 +31,7 @@
                 </div>
 
             </div>
-            <div class="col-xs-6" style="right: 65px; font-family: Acme!important;">
+            <div class="col-md-4" style="font-family: Acme!important;">
                 <h2>
                     I'm thinking of a number between
                 </h2>
@@ -41,7 +41,7 @@
                     Can you figure out what it is?
                 </h3>
             </div>
-            <div class="col-xs-3 hbox">
+            <div class="col-md-4 hbox">
                 <h2>Show Hints</h2>
                 <label class="switch">
                     <input type="checkbox" checked>
@@ -50,25 +50,25 @@
             </div>
 
         </div>
-        <div class="text-center" style="margin-left: -120px">
+        <div class="text-center">
             <a id="resetbtn" class="btn btn-warning">Reset</a>
         </div>
         <div class="center-block">
-            <div class="row">
-                <div id="guesspanel" class="blocks col-xs-3 text-center">
+            <div class="row text-center">
+                <div id="guesspanel" class="blocks col-md-4 col-lg-12 text-center">
 
-                    <h2>Guesses  <span id="guesses" class="badge" style="margin-bottom: 5px">0</span></h2>
+                    <h2>Guesses  <span id="guesses" class="badge">0</span></h2>
                     <div class="gcontent">
 
                     </div>
                 </div>
-                <div id="mainpanel" class="blocks col-xs-4 text-center " style="padding-top: 130px">
+                <div id="mainpanel" class="blocks col-md-4 col-lg-12 text-center " >
                     <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="form-control center-block" placeholder="Type Your Guess Here!">
 
                     <a id="gbtn" class="btn btn-danger text-uppercase">Guess</a>
 
                 </div>
-                <div id="hintpanel" class="blocks col-xs-4" style="width: 30%">
+                <div id="hintpanel" class="blocks col-md-4 col-lg-12">
                     <h2 class="text-center">Hints</h2><br><br>
                     <div class="hcontent center-block text-center">
 
@@ -109,13 +109,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/bootstrap.js"></script>

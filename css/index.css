@@ -6,15 +6,14 @@ body{
     background-color: white;
     height: auto;
     min-height: 200px;
-    height: 350px;
-    /*width: 700px;*/
+    width: 400px;
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: 18.5px;
 }
 
 #mainpanel{
-    padding: 60px;
+    padding: 30px;
     background-color: #FF6766 ;
 }
 
@@ -165,20 +164,57 @@ input:checked + .slider:before {
     background: white;
 }
 /*DIFFICULTY RADIO*/
-
-
-
-
-
-
-
-
-
-
-
 .hbox{
     margin-top:2%;
     right: 5%;
 }
 
+/* Media Queries */
+
+/* Extra-small */
+@media screen and (max-width: 360px) {
+    .blocks{
+        background-color: white;
+        height: auto;
+        height: 50px;
+        width: 200px;
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        margin: 12.5px;
+    }
+    #gno{
+        border-radius: 50px;
+        width: 90%;
+    }
+  }
+  
+  /* Small */
+  @media screen and (min-width: 361px) and (max-width: 480px) {
+    .blocks{
+        background-color: white;
+        height: 30px;
+        height: 150px;
+        width: 300px;
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        margin: 12.5px;
+    }
+    #gno{
+        border-radius: 50px;
+        width: 95%;
+    }
+  }
+  
+  /* Medium-only */
+  @media screen and (min-width: 481px) and (max-width: 560px) {
+    .blocks{
+        background-color: white;
+        height: 50px;
+        height: 350px;
+        width: 400px;
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        margin: 12.5px;
+    }
+  }
 
