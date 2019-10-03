@@ -26,10 +26,12 @@ $(document).ready(function () {
         ischecked = cbox.is(":checked");
         if(!ischecked) {
             hintpanel.css("background-color", "black");
+            hintpanel.css("color", "#ddd");
             $('#tsfd').show();
         }
         else {
             hintpanel.css("background-color","white");
+            hintpanel.css("color", "#333");
             $('#tsfd').hide();
         }
     });
