@@ -3,7 +3,6 @@ function getrandomnumber(min,max) {
 }
 
 $(document).ready(function () {
-    $('#tsfd').hide();
     let rand = getrandomnumber(1,100);
 
     let guesspanel = $('#guesspanel');
