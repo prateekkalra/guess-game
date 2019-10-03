@@ -30,6 +30,9 @@ body{
     border-radius: 50px;
     width: 70%;
 }
+#gno::placeholder {
+    color: #666;
+}
 
 .badge{
     font-size: 20px;
