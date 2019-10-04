@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Guess The Number</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Volkhov" rel="stylesheet">
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-xs-3 text-center" style="padding-top: 30px">
+        <div class="row pt-3">
+            <div class="col-12 col-md-3 order-md-1 order-2 text-center text-md-left pt-3 pb-4">
                 <div id="diffchoose">
                     <label class="container">Easy
                         <input type="radio"  name="radio" class="dif" value="0">
@@ -29,9 +29,8 @@
                         <span class="checkmark"></span>
                     </label>
                 </div>
-
             </div>
-            <div class="col-xs-6" style="right: 65px; font-family: Acme!important;">
+            <div class="col-12 col-md-6 order-1 order-md-2 text-center pt-3 pb-4" style="font-family: Acme!important;">
                 <h2>
                     I'm thinking of a number between
                 </h2>
@@ -41,44 +40,46 @@
                     Can you figure out what it is?
                 </h3>
             </div>
-            <div class="col-xs-3 hbox">
+            <div class="col-12 col-md-3 order-3 text-center text-md-left pt-3">
                 <h2>Show Hints</h2>
                 <label class="switch">
                     <input type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
             </div>
-
         </div>
-        <div class="text-center" style="margin-left: -120px">
-            <a id="resetbtn" class="btn btn-warning">Reset</a>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a id="resetbtn" class="btn btn-warning">Reset</a>
+            </div>
         </div>
-        <div class="center-block">
-            <div class="row">
-                <div id="guesspanel" class="blocks col-xs-3 text-center">
-
+        <div class="row pt-5">
+            <div class="col-12 col-md-3 mb-3">
+                <div class="blocks pt-3 pl-3">
                     <h2>Guesses  <span id="guesses" class="badge" style="margin-bottom: 5px">0</span></h2>
                     <div class="gcontent">
-
+    
                     </div>
-                </div>
-                <div id="mainpanel" class="blocks col-xs-4 text-center " style="padding-top: 130px">
-                    <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="form-control center-block" placeholder="Type Your Guess Here!">
-
-                    <a id="gbtn" class="btn btn-danger text-uppercase">Guess</a>
-
-                </div>
-                <div id="hintpanel" class="blocks col-xs-4" style="width: 30%">
-                    <h2 class="text-center">Hints</h2><br><br>
-                    <div class="hcontent center-block text-center">
-
-                    </div>
-                    <h1 id="tsfd" class="text-center" style="color: blue" >Too smart for hints</h1>
                 </div>
             </div>
-
-
+            <div class="col-12 col-md-4 mb-3">
+                <div id="mainpanel" class="pt-3 pl-3">
+                    <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="form-control center-block" placeholder="Type Your Guess Here!">
+                    <a id="gbtn" class="btn btn-danger text-uppercase">Guess</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-3">
+                <div class="blocks pt-3">
+                    <h2 class="text-center">Hints</h2><br><br>
+                    <div class="hcontent center-block text-center">
+    
+                    </div>
+                </div>
+                <h1 id="tsfd" class="text-center" style="color: blue" >Too smart for hints</h1>
+            </div>
         </div>
+    </div>
+    <div class="container-fluid">
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog" >
                 <div class="modal-content" style="background-color: #00a86b">
@@ -109,16 +110,8 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

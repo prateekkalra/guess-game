@@ -5,17 +5,16 @@ body{
 .blocks{
     background-color: white;
     height: auto;
-    min-height: 200px;
-    height: 350px;
+    min-height: 350px;
     /*width: 700px;*/
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
 }
 
 #mainpanel{
-    padding: 60px;
     background-color: #FF6766 ;
+    height:350px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .btn{
@@ -105,8 +104,6 @@ input:checked + .slider:before {
     display: block;
     position: relative;
     padding-left: 35px;
-    padding-right: 200px;
-    margin-left: 40%;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -164,17 +161,8 @@ input:checked + .slider:before {
     border-radius: 50%;
     background: white;
 }
+
 /*DIFFICULTY RADIO*/
-
-
-
-
-
-
-
-
-
-
 
 .hbox{
     margin-top:2%;
