@@ -1,8 +1,9 @@
-body{
+body {
     background-color: #e2e1e0;
-    font-family:Volkhov;
+    font-family: Volkhov;
 }
-.blocks{
+
+.blocks {
     background-color: white;
     height: auto;
     min-height: 200px;
@@ -13,33 +14,33 @@ body{
     margin: 18.5px;
 }
 
-#mainpanel{
+#mainpanel {
     padding: 60px;
     background-color: #FF6766 ;
 }
 
-.btn{
+.btn {
     margin-top: 10px;
     border-radius: 0px;
     font-size: 25px;
+    transition: background-color .2s;
 }
-.btn:focus{
+
+.btn:focus {
     outline: none;
 }
-#gno{
+
+#gno {
     border-radius: 50px;
     width: 70%;
 }
 
-.badge{
+.badge {
     font-size: 20px;
     border-radius: 500px;
 }
 
-
-
-
-/*HINT SWITCH*/
+/* HINT SWITCH */
 
 .switch {
     position: relative;
@@ -48,7 +49,7 @@ body{
     height: 34px;
 }
 
-.switch input {display:none;}
+.switch input { display: none; }
 
 .slider {
     position: absolute;
@@ -95,11 +96,10 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-/*HINT SWITCH*/
 
+/* HINT SWITCH */
 
-
-/*DIFFICULTY RADIO*/
+/* DIFFICULTY RADIO */
 /* The container */
 .container {
     display: block;
@@ -131,6 +131,7 @@ input:checked + .slider:before {
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
+    transition: background-color .2s;
 }
 
 /* On mouse-over, add a grey background color */
@@ -164,21 +165,10 @@ input:checked + .slider:before {
     border-radius: 50%;
     background: white;
 }
-/*DIFFICULTY RADIO*/
 
+/* DIFFICULTY RADIO */
 
-
-
-
-
-
-
-
-
-
-.hbox{
-    margin-top:2%;
+.hbox {
+    margin-top: 2%;
     right: 5%;
 }
-
-
