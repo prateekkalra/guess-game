@@ -1,5 +1,6 @@
-# guess-the-number
+# Guess The Number
 
-The classic guess the number game with some extra features.
+**Guess The Number** is a classic guess the number game with some extra features.
 
-[Try it](https://prateekkalra.github.io/guess-game)
+##Where can I try it?
+You can try it [here](https://prateekkalra.github.io/guess-game)
