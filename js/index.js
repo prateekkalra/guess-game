@@ -4,6 +4,7 @@ function getrandomnumber(min,max) {
 
 $(document).ready(function () {
     $('#tsfd').hide();
+
     let rand = getrandomnumber(1,100);
 
     let guesspanel = $('#guesspanel');
@@ -13,9 +14,11 @@ $(document).ready(function () {
     let guessbtn = $('#gbtn');
 
     let cbox = $('.switch input');
+    cbox.click();
     let ischecked = true;
     let toohigh = false,toolow=false;
     let diffbox = $('input[name=radio]:radio');
+    $('input[name=radio][value=1]').prop("checked", true);
     let max = $('#max');
     input.on('keyup',function (event) {
        if(event.keyCode===13){
