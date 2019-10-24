@@ -9,29 +9,28 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-xs-3 text-center" style="padding-top: 30px">
+        <div class="row text-center flex flexsplit__flex space-between pad--16">
+            <div class="flex justify-content-center width--100" style="padding-top: 30px">
                 <div id="diffchoose">
-                    <label class="container">Easy
-                        <input type="radio"  name="radio" class="dif" value="0">
+                    <label class="difficultyOptions">Easy
+                        <input type="radio" name="radio" class="dif opacity--0" value="0">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="container">Medium
-                        <input type="radio" checked="checked" name="radio" class="dif" value="1">
+                    <label class="difficultyOptions">Medium
+                        <input type="radio" checked="checked" name="radio" class="dif opacity--0" value="1">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="container">Hard
-                        <input type="radio" name="radio" class="dif" value="2">
+                    <label class="difficultyOptions">Hard
+                        <input type="radio" name="radio" class="dif opacity--0" value="2">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="container">Expert
-                        <input type="radio" name="radio" class="dif" value="3">
+                    <label class="difficultyOptions">Expert
+                        <input type="radio" name="radio" class="dif opacity--0" value="3">
                         <span class="checkmark"></span>
                     </label>
                 </div>
-
             </div>
-            <div class="col-xs-6" style="right: 65px; font-family: Acme!important;">
+            <div class="flex flex-direction-column width--200 pad--16--horizontal" style="right: 65px; font-family: Acme!important;">
                 <h2>
                     I'm thinking of a number between
                 </h2>
@@ -41,34 +40,35 @@
                     Can you figure out what it is?
                 </h3>
             </div>
-            <div class="col-xs-3 hbox">
-                <h2>Show Hints</h2>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
+            <div class="width--100">   
+                <div class="flex flex-direction-column align-items-center hbox width--100">
+                    <h2>Show Hints</h2>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
             </div>
-
         </div>
-        <div class="text-center" style="margin-left: -120px">
+        <div class="text-center">
             <a id="resetbtn" class="btn btn-warning">Reset</a>
         </div>
         <div class="center-block">
-            <div class="row">
-                <div id="guesspanel" class="blocks col-xs-3 text-center">
+            <div class="row guessGameContainer">
+                <div id="guesspanel" class="blocks text-center">
 
                     <h2>Guesses  <span id="guesses" class="badge" style="margin-bottom: 5px">0</span></h2>
                     <div class="gcontent">
 
                     </div>
                 </div>
-                <div id="mainpanel" class="blocks col-xs-4 text-center " style="padding-top: 130px">
+                <div id="mainpanel" class="blocks text-center " style="padding-top: 130px">
                     <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="form-control center-block" placeholder="Type Your Guess Here!">
 
                     <a id="gbtn" class="btn btn-danger text-uppercase">Guess</a>
 
                 </div>
-                <div id="hintpanel" class="blocks col-xs-4" style="width: 30%">
+                <div id="hintpanel" class="blocks">
                     <h2 class="text-center">Hints</h2><br><br>
                     <div class="hcontent center-block text-center">
 

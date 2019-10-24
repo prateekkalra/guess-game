@@ -6,11 +6,14 @@ body{
     background-color: white;
     height: auto;
     min-height: 200px;
-    height: 350px;
-    /*width: 700px;*/
+    width: 100%;
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: 18.5px;
+}
+
+.guessGameContainer {
+    display: flex;
 }
 
 #mainpanel{
@@ -100,23 +103,22 @@ input:checked + .slider:before {
 
 
 /*DIFFICULTY RADIO*/
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    padding-right: 200px;
-    margin-left: 40%;
+/* The difficultyOptions */
+.difficultyOptions {
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 /* Hide the browser's default radio button */
-.container input {
+.difficultyOptions input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -124,22 +126,21 @@ input:checked + .slider:before {
 
 /* Create a custom radio button */
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.difficultyOptions:hover input ~ .checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.difficultyOptions input:checked ~ .checkmark {
     background-color: #2196F3;
 }
 
@@ -151,12 +152,12 @@ input:checked + .slider:before {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.difficultyOptions input:checked ~ .checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
+.difficultyOptions .checkmark:after {
     top: 9px;
     left: 9px;
     width: 8px;
@@ -167,18 +168,57 @@ input:checked + .slider:before {
 /*DIFFICULTY RADIO*/
 
 
+.flex {
+    display: flex;
+}
 
+.flexsplit__flex {
+    flex: 1 1 auto;
+}
 
+.space-between {
+    justify-content: space-between;
+}
 
+.flex-direction-row-reverse {
+    flex-direction: row-reverse;
+}
 
+.flex-direction-column {
+    flex-direction: column;
+}
 
+.justify-content-center {
+    justify-content: center;
+}
 
+.align-items-center {
+    align-items: center;
+}
 
+.opacity--0 {
+    opacity: 0;
+}
 
+.width--100 {
+    width: 100%;
+}
 
-.hbox{
-    margin-top:2%;
-    right: 5%;
+.width--200 {
+    width: 200%;
+}
+
+.pad--16 {
+    padding: 16px;
+}
+
+.pad--16--horizontal {
+    padding: 0 16px;
 }
 
 
+@media only screen and (max-width: 640px) {
+    .guessGameContainer {
+        flex-wrap: wrap;
+    }
+}
