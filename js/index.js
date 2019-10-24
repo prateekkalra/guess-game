@@ -2,7 +2,17 @@ function getrandomnumber(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+const defaultLevel = '1'
+
 $(document).ready(function () {
+    const currentlevel = localStorage.getItem('level') || defaultLevel;
+
+    [...document.querySelectorAll('input[type=radio]')].forEach(input => {
+        if(input.value === currentlevel) {
+            input.setAttribute('checked', 'checked')
+        }
+    })
+
     $('#tsfd').hide();
     let rand = getrandomnumber(1,100);
 
@@ -36,6 +46,7 @@ $(document).ready(function () {
     let maxstr = '';
     diffbox.change(function () {
         let diff = $('input[name=radio]:checked').val();
+        localStorage.setItem('level', diff);
         // $('#resetbtn').click();
         switch (diff){
             case '0':
@@ -79,11 +90,11 @@ $(document).ready(function () {
     let count=0;
     (guessbtn).click(function () {
         let gval = input.val();
-  		/*console.log(count);
-  		console.log(nog);*/
+        /*console.log(count);
+        console.log(nog);*/
 
         if(String(gval)!=''&&count<10&&end==false) {
-        	$('.hbox').hide();
+            $('.hbox').hide();
         $('#diffchoose').hide();
         count++;
 
@@ -108,9 +119,9 @@ $(document).ready(function () {
         else if(toolow==true && !end){
             msg='Too Low';
         }
-		else{
-			msg='Correct';
-		}
+        else{
+            msg='Correct';
+        }
 
         let prod=1,cdig=null;
 
@@ -147,7 +158,7 @@ $(document).ready(function () {
         condigit = cdig+" is one of the digits of the number.";
 
         if(count==10){
-        	$('#lost_msg').text('The number was '+rand);
+            $('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
             $('.gcontent').append('<h4>'+gval+'('+msg+')'+'<h4>');
