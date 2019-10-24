@@ -45,6 +45,7 @@ $(document).ready(function () {
                     cbox.click();
                 }
                 $('.hbox').hide();
+                $('[date-element-name="hintDummyContainer"').show();
                 break;
             case '1':
                 rand = getrandomnumber(1,100);
@@ -53,6 +54,7 @@ $(document).ready(function () {
                     cbox.click();
                 }
                 $('.hbox').show();
+                $('[date-element-name="hintDummyContainer"').hide();
                 break;
             case '2':
                 rand = getrandomnumber(1,1000);
@@ -61,6 +63,7 @@ $(document).ready(function () {
                     cbox.click();
                 }
                 $('.hbox').show();
+                $('[date-element-name="hintDummyContainer"').hide();
                 break;
             case '3':
                 rand = getrandomnumber(1,10000);
@@ -69,6 +72,7 @@ $(document).ready(function () {
                     cbox.click();
                 }
                 $('.hbox').show();
+                $('[date-element-name="hintDummyContainer"').hide();
                 break;
         }
         max.html(maxstr);

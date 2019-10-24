@@ -9,29 +9,28 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row text-center flex flexsplit__flex space-between">
-            <div class="text-center flex" style="padding-top: 30px">
+        <div class="row text-center flex flexsplit__flex space-between pad--16">
+            <div class="flex justify-content-center width--100" style="padding-top: 30px">
                 <div id="diffchoose">
-                    <label class="difficultyOptionsdifficultyOptions flex flex-direction-row-reverse">Easy
+                    <label class="difficultyOptions">Easy
                         <input type="radio" name="radio" class="dif opacity--0" value="0">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="difficultyOptionsdifficultyOptions flex flex-direction-row-reverse">Medium
+                    <label class="difficultyOptions">Medium
                         <input type="radio" checked="checked" name="radio" class="dif opacity--0" value="1">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="difficultyOptionsdifficultyOptions flex flex-direction-row-reverse">Hard
+                    <label class="difficultyOptions">Hard
                         <input type="radio" name="radio" class="dif opacity--0" value="2">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="difficultyOptionsdifficultyOptions flex flex-direction-row-reverse">Expert
+                    <label class="difficultyOptions">Expert
                         <input type="radio" name="radio" class="dif opacity--0" value="3">
                         <span class="checkmark"></span>
                     </label>
                 </div>
-
             </div>
-            <div class="" style="right: 65px; font-family: Acme!important;">
+            <div class="flex flex-direction-column width--200 pad--16--horizontal" style="right: 65px; font-family: Acme!important;">
                 <h2>
                     I'm thinking of a number between
                 </h2>
@@ -41,16 +40,17 @@
                     Can you figure out what it is?
                 </h3>
             </div>
-            <div class="hbox">
-                <h2>Show Hints</h2>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
+            <div class="width--100">   
+                <div class="flex flex-direction-column align-items-center hbox width--100">
+                    <h2>Show Hints</h2>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
             </div>
-
         </div>
-        <div class="text-center" style="margin-left: -120px">
+        <div class="text-center">
             <a id="resetbtn" class="btn btn-warning">Reset</a>
         </div>
         <div class="center-block">

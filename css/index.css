@@ -100,18 +100,22 @@ input:checked + .slider:before {
 
 
 /*DIFFICULTY RADIO*/
-/* The difficultyOptionsdifficultyOptions */
-.difficultyOptionsdifficultyOptions {
+/* The difficultyOptions */
+.difficultyOptions {
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 /* Hide the browser's default radio button */
-.difficultyOptionsdifficultyOptions input {
+.difficultyOptions input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -124,15 +128,16 @@ input:checked + .slider:before {
     background-color: #eee;
     border-radius: 50%;
     position: relative;
+    margin-right: 10px;
 }
 
 /* On mouse-over, add a grey background color */
-.difficultyOptionsdifficultyOptions:hover input ~ .checkmark {
+.difficultyOptions:hover input ~ .checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.difficultyOptionsdifficultyOptions input:checked ~ .checkmark {
+.difficultyOptions input:checked ~ .checkmark {
     background-color: #2196F3;
 }
 
@@ -144,12 +149,12 @@ input:checked + .slider:before {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.difficultyOptionsdifficultyOptions input:checked ~ .checkmark:after {
+.difficultyOptions input:checked ~ .checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.difficultyOptionsdifficultyOptions .checkmark:after {
+.difficultyOptions .checkmark:after {
     top: 9px;
     left: 9px;
     width: 8px;
@@ -176,6 +181,34 @@ input:checked + .slider:before {
     flex-direction: row-reverse;
 }
 
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
 .opacity--0 {
     opacity: 0;
+}
+
+.width--100 {
+    width: 100%;
+}
+
+.width--200 {
+    width: 200%;
+}
+
+.pad--16 {
+    padding: 16px;
+}
+
+.pad--16--horizontal {
+    padding: 0 16px;
 }
