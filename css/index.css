@@ -100,13 +100,8 @@ input:checked + .slider:before {
 
 
 /*DIFFICULTY RADIO*/
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    padding-right: 200px;
-    margin-left: 40%;
+/* The difficultyOptionsdifficultyOptions */
+.difficultyOptionsdifficultyOptions {
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -116,7 +111,7 @@ input:checked + .slider:before {
 }
 
 /* Hide the browser's default radio button */
-.container input {
+.difficultyOptionsdifficultyOptions input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -124,22 +119,20 @@ input:checked + .slider:before {
 
 /* Create a custom radio button */
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 25px;
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
+    position: relative;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.difficultyOptionsdifficultyOptions:hover input ~ .checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.difficultyOptionsdifficultyOptions input:checked ~ .checkmark {
     background-color: #2196F3;
 }
 
@@ -151,12 +144,12 @@ input:checked + .slider:before {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.difficultyOptionsdifficultyOptions input:checked ~ .checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
+.difficultyOptionsdifficultyOptions .checkmark:after {
     top: 9px;
     left: 9px;
     width: 8px;
@@ -167,18 +160,22 @@ input:checked + .slider:before {
 /*DIFFICULTY RADIO*/
 
 
-
-
-
-
-
-
-
-
-
-.hbox{
-    margin-top:2%;
-    right: 5%;
+.flex {
+    display: flex;
 }
 
+.flexsplit__flex {
+    flex: 1 1 auto;
+}
 
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-direction-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.opacity--0 {
+    opacity: 0;
+}
