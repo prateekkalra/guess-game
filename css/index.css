@@ -10,7 +10,6 @@ body{
     /*width: 700px;*/
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
 }
 
 #mainpanel{
@@ -26,9 +25,10 @@ body{
 .btn:focus{
     outline: none;
 }
+
 #gno{
     border-radius: 50px;
-    width: 70%;
+    text-align: center;
 }
 
 .badge{
@@ -104,9 +104,6 @@ input:checked + .slider:before {
 .container {
     display: block;
     position: relative;
-    padding-left: 35px;
-    padding-right: 200px;
-    margin-left: 40%;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -166,19 +163,58 @@ input:checked + .slider:before {
 }
 /*DIFFICULTY RADIO*/
 
+#diffchoose {
+    padding-left: 35%;
+}
+#diffchoose .container {
+    padding-left: 30px;
+}
 
+.diff-box {
+    display: inline-block;
+    width: 26%;
+    padding-left: 30px;
+}
 
-
-
-
-
-
-
-
+.main-info {
+    display: inline-block;
+    width: 46%;
+}
 
 .hbox{
+    display: inline-block;
     margin-top:2%;
-    right: 5%;
+    width: 26%;
 }
+
+#guesspanel {
+    margin: 2%;
+    display: inline-block;
+    width: 24%;
+}
+
+#mainpanel {
+    margin: 2%;
+    display: inline-block;
+    width: 40%;
+}
+
+#hintpanel {
+    margin: 2%;
+    display: inline-block;
+    width: 24%;
+}
+
+@media only screen and (max-width: 680px) {
+    .diff-box, .main-info, .hbox{
+        display: block;
+        width: 100%;
+    }
+
+    #guesspanel, #mainpanel, #hintpanel {
+        width: 96%
+    }
+}
+
 
 
