@@ -191,8 +191,10 @@ $(document).ready(function () {
         if(diff=='0'){
             $('.hbox').hide();
         }*/
-        //Refresh Page rather than manual refresh due to some issues 
+        //Refresh P$("input:radio[value='2']").attr('checked','true');
+        document.getElementById("default").checked = true;
         location.reload();
+        
 
 
     });
