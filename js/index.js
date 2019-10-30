@@ -25,7 +25,7 @@ $(document).ready(function () {
     cbox.change(function () {
         ischecked = cbox.is(":checked");
         if(!ischecked) {
-            hintpanel.css("background-color", "black");
+            hintpanel.css("background-color", "rgb(240, 177, 157)");
             $('#tsfd').show();
         }
         else {
