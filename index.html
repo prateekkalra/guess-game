@@ -2,82 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess The Number</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Acme|Volkhov" rel="stylesheet">
+    
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-xs-3 text-center" style="padding-top: 30px">
-                <div id="diffchoose">
-                    <label class="container">Easy
-                        <input type="radio"  name="radio" class="dif" value="0">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Medium
-                        <input type="radio" checked="checked" name="radio" class="dif" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Hard
-                        <input type="radio" name="radio" class="dif" value="2">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Expert
-                        <input type="radio" name="radio" class="dif" value="3">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-
-            </div>
-            <div class="col-xs-6" style="right: 65px; font-family: Acme!important;">
-                <h2>
-                    I'm thinking of a number between
-                </h2>
-                <h1>1 and <span id="max">100</span></h1>
-                <h3 >
-                    You have ten guesses<br>
-                    Can you figure out what it is?
-                </h3>
-            </div>
-            <div class="col-xs-3 hbox">
-                <h2>Show Hints</h2>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-            </div>
-
+     <div class="main-container">
+        <div class="main-heading">
+            <h2 class="main-heading-small">
+                I'm thinking of a number between
+            </h2>
+            <h1 class="main-heading-big span-sentence">1</h1><h2 class="main-heading-small span-sentence">and</h2><h1 class="main-heading-big span-sentence" id="max">100</h1>
+            <h2 class="main-heading-small">
+                You have ten guesses<br>
+                Can you figure out what it is?
+            </h2>
         </div>
-        <div class="text-center" style="margin-left: -120px">
-            <a id="resetbtn" class="btn btn-warning">Reset</a>
-        </div>
-        <div class="center-block">
-            <div class="row">
-                <div id="guesspanel" class="blocks col-xs-3 text-center">
-
-                    <h2>Guesses  <span id="guesses" class="badge" style="margin-bottom: 5px">0</span></h2>
-                    <div class="gcontent">
-
-                    </div>
+        <div class="options-action-block">
+            <div id="difficulty-levels">
+                <div class="container">
+                    <h3 class="container-label">Easy</h3>
+                    <input type="radio" name="radio" class="dif container-input" value="0">
+                    <span class="checkmark container-checkmark"></span>
                 </div>
-                <div id="mainpanel" class="blocks col-xs-4 text-center " style="padding-top: 130px">
-                    <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="form-control center-block" placeholder="Type Your Guess Here!">
-
-                    <a id="gbtn" class="btn btn-danger text-uppercase">Guess</a>
-
+                <div class="container">
+                    <h3 class="container-label">Medium</h3>
+                    <input type="radio" checked="checked" name="radio" class="dif container-input" value="1">
+                    <span class="checkmark container-checkmark"></span>
                 </div>
-                <div id="hintpanel" class="blocks col-xs-4" style="width: 30%">
-                    <h2 class="text-center">Hints</h2><br><br>
-                    <div class="hcontent center-block text-center">
-
-                    </div>
-                    <h1 id="tsfd" class="text-center" style="color: blue" >Too smart for hints</h1>
+                <div class="container">
+                    <h3 class="container-label">Hard</h3>
+                    <input type="radio" name="radio" class="dif container-input" value="2">
+                    <span class="checkmark container-checkmark"></span>
+                </div>
+                <div class="container">
+                    <h3 class="container-label">Expert</h3>
+                    <input type="radio" name="radio" class="dif container-input" value="3">
+                    <span class="checkmark container-checkmark"></span>
                 </div>
             </div>
+            <div class="guess-action-block">
+                <div id="mainpanel" >
+                    <input id="gno" type="number"  min="1" oninput="validity.valid||(value='');"  placeholder="Type Your Guess Here!">
 
+                    <button id="gbtn">Guess</button>
 
+                </div>
+
+            </div>
+            <div class="hints-reset-block">
+                <div class="hbox hints-block">
+                    <h2>Show Hints</h2>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="reset-block">
+                    <!-- <a id="resetbtn" class="btn btn-warning">Reset</a> -->
+                    <button id="resetbtn">Reset</button>        
+                </div>
+            </div>
+        </div>
+        <div class="hints-guesses-panel">
+            <div id="hintpanel" class="hints-panel">
+                <h2>Hints</h2>
+                <div class="hcontent">
+                  
+                </div>
+                <h1 id="tsfd" class="text-center" style="color: white" >Too smart for hints</h1>
+            </div>
+            <div id="guesspanel" class="guess-panel">
+    
+                <h2>Guesses  <span id="guesses" class="badge guess-panel-badge">0</span></h2>
+                <div class="gcontent">
+                    
+                </div>
+            </div>
         </div>
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog" >
@@ -116,9 +119,8 @@
 
 
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.js"></script> -->
 <script src="js/index.js"></script>
 </body>
 </html>

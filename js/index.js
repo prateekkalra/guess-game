@@ -16,7 +16,15 @@ $(document).ready(function () {
     let ischecked = true;
     let toohigh = false,toolow=false;
     let diffbox = $('input[name=radio]:radio');
-    let max = $('#max');
+    let difficultyLabel = $('.container-checkmark');
+    
+    let max = $('#max');    
+    difficultyLabel.click(function(e){
+        let target = $(e.target);
+        target.siblings("input[name=radio]:radio").prop('checked',true)
+        custom_functions.change_difficulty();
+    });
+    
     input.on('keyup',function (event) {
        if(event.keyCode===13){
            guessbtn.click();
@@ -29,13 +37,14 @@ $(document).ready(function () {
             $('#tsfd').show();
         }
         else {
-            hintpanel.css("background-color","white");
+            hintpanel.css("background-color", "#DDC632");
             $('#tsfd').hide();
         }
     });
     let maxstr = '';
-    diffbox.change(function () {
-        let diff = $('input[name=radio]:checked').val();
+    custom_functions = {
+        change_difficulty:function(){
+            let diff = $('input[name=radio]:checked').val();
         // $('#resetbtn').click();
         switch (diff){
             case '0':
@@ -72,7 +81,9 @@ $(document).ready(function () {
                 break;
         }
         max.html(maxstr);
-    });
+        }
+    }
+
     
     let end=false;
     let nog=10;

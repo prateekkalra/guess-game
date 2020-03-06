@@ -1,158 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap');
+
 body{
-    background-color: #e2e1e0;
-    font-family:Volkhov;
-}
-.blocks{
-    background-color: white;
-    height: auto;
-    min-height: 200px;
-    height: 350px;
-    /*width: 700px;*/
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
-}
-
-#mainpanel{
-    padding: 60px;
-    background-color: #FF6766 ;
-}
-
-.btn{
-    margin-top: 10px;
-    border-radius: 0px;
-    font-size: 25px;
-}
-.btn:focus{
-    outline: none;
-}
-#gno{
-    border-radius: 50px;
-    width: 70%;
-}
-
-.badge{
-    font-size: 20px;
-    border-radius: 500px;
+    background-color: #0C718D;
+    font-family:'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    width:100%;
+    height:100vh;
 }
 
 
+.main-container{
+    width:100%;
+    height:100vh;
+    display: grid;
 
-
-/*HINT SWITCH*/
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+    grid-template-areas:
+    "main-heading hints-guesses"
+    "options-action-block hints-guesses"
+    ;
+    grid-template-columns: minmax(500px,1fr) minmax(300px,0.7fr);
+    row-gap:20px;
 }
 
-.switch input {display:none;}
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+/****-----------------MAIN-HEADING BLOCK-----------------------***/
+
+.main-heading{
+    grid-area: main-heading;
+    color: #FCE3C5;
+    width:100%;
+    align-self: center;
+    text-align: center;
+    
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+.main-heading-small{
+    font-size:2.5em;
+    font-weight: 300;
 }
 
-input:checked + .slider {
-    background-color: #2196F3;
+.main-heading-big{
+    font-size:3em;
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+.span-sentence{
+    display: inline;
+    margin-right:10px;
 }
 
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+#and-word{
+    display: inline;
 }
 
-.slider.round {
-    border-radius: 34px;
+/***----------------------END OF MAIN-HEADING BLOCK----------------***/
+
+
+/***---------------------DIFFICULTY LEVELS AND GUESS BLOCK-------------***/
+.options-action-block{
+    grid-area: options-action-block;
 }
 
-.slider.round:before {
-    border-radius: 50%;
-}
-/*HINT SWITCH*/
 
-
-
-/*DIFFICULTY RADIO*/
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    padding-right: 200px;
-    margin-left: 40%;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+#difficulty-levels{
+    width:100%;
+    display: flex;
+    color: #FCE3C5;
+    justify-content: center;
 }
 
-/* Hide the browser's default radio button */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+.container{
+    height:70px;
+    display: grid;
+    grid-template-areas: "checkmark label";
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
 }
 
-/* Create a custom radio button */
+.container-checkmark{
+    grid-area:checkmark;
+   
+}
+
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
+    height: 15px;
+    width: 15px;
+    background-color: #FCE3C5;
     border-radius: 50%;
+    cursor: pointer;
 }
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-    display: block;
+.container input:checked ~ .checkmark {
+    color: #DDC632;
 }
 
 /* Style the indicator (dot/circle) */
@@ -164,21 +105,605 @@ input:checked + .slider:before {
     border-radius: 50%;
     background: white;
 }
-/*DIFFICULTY RADIO*/
 
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
 
-
-
-
-
-
-
-
-
-
-.hbox{
-    margin-top:2%;
-    right: 5%;
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #DDC632;
 }
 
 
+
+
+.container input {
+    display: none;
+}
+
+
+.container-label{
+    grid-area:label;
+    padding-bottom:8px;
+}
+
+
+
+/*------GUESS ACTION-------------*/
+
+#mainpanel{
+    margin-top:35px;
+    margin-bottom:15px;
+        height:45px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#gno{
+    border-radius: 50px;
+    width: auto;
+    padding:0px 30px;
+    font-size:1.5em;
+    margin-right:8px;
+    border:0px;
+}
+
+#gbtn{
+    padding:5px 20px;
+    font-size:1.5em;
+    border-radius:10px;
+    background-color: #0C3B5D;
+    color: #FCE3C5;
+    border:0px;
+    margin-left:8px;
+    
+}
+
+.hints-reset-block{
+    margin-top:45px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+
+
+
+
+.hints-block h2{
+    font-size:1.8em;
+    color: #FCE3C5;
+    
+
+}
+
+#resetbtn{
+    background-color: #DDC632;
+    color: whitesmoke;
+    padding:5px 20px;
+    font-size: 1.6em;
+    border-radius: 10px;
+    border:0px;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 68px;
+    height: 28px;
+    margin-left:21px;
+}
+
+.switch input {display:none;}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 3px;
+    background-color: #0C3B5D;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ffffff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(38px);
+    -ms-transform: translateX(38px);
+    transform: translateX(38px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/***-----------------END OF DIFFICULTY LEVELS AND ACTION BLOCK--------------***/
+
+/*--------------------HINTS AND GUESSES---------------------*/
+
+.hints-guesses-panel{
+    grid-area:hints-guesses;
+    display: grid;
+    padding:5px 0px;
+    align-self: stretch;
+    grid-template-rows: minmax(260px,0.6fr) 1fr;
+}
+
+
+
+.hints-panel{
+    max-width:100%;
+    background-color: #DDC632;
+    color: #0C3B5D;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.hcontent{
+    margin-top:1px;
+}
+
+.hints-panel h2{
+    margin-top:10px;
+    font-weight: 400;
+}
+.hints-panel h4{
+    text-align: center;
+    font-weight:600;
+}
+
+
+
+.guess-panel{
+    width:100%;
+    background-color: #0C3B5D;
+    color: #FCE3C5;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.badge{
+    font-size: 20px;
+    border-radius: 500px;
+}
+
+.guess-panel h2{
+    margin-top:10px;
+    font-weight:400;
+}
+
+.guess-panel h4{
+    text-align: center;
+    font-weight:600;
+}
+
+/*----------------------END OF HINTS AND GUESSES----------------------------*/
+
+
+
+/***------------------MEDIA QUERIES----------------------*****/
+
+
+
+/***-------------------FOR TABS---------------------------***/
+@media screen and (max-width:768px){
+    .main-container{
+        grid-template-areas:
+        "main-heading"
+        "hints-guesses"
+        "options-action-block";
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows:0.3fr 400px 0.3fr;
+    }
+    .hints-guesses-panel{
+        padding:10px;
+        column-gap: 5px;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows:1fr;
+    }
+
+        /**-------------MAIN-HEADING BLOCK---------------------**/
+        .main-heading-small{
+            font-size: 1.9em;
+        }
+        
+        .main-heading-big{
+            font-size:2.3em;
+        }
+        /**----------------END OF MAIN-HEADING BLOCK-------------------**/
+    
+        /**-------------HINTS-GUESSES PANEL----------------------**/
+        .hints-panel h2, .guess-panel h2{
+            font-size:1.4em;
+        }
+    
+        .hints-panel h4, .guess-panel h4{
+            font-size:1.2em;
+        }
+    
+        .guess-panel-badge{
+            font-size:1em;
+        }
+    
+        /**-------------END OF HINTS-GUESSES------------------**/
+    
+        /**--------------DIFFICULTY LEVELS--------------------**/
+        .checkmark {
+            height: 18px;
+            width: 18px;
+        }
+        
+        .container-label{
+            font-size:1.4em;
+        }
+        /**--------------END OF DIFFICULTY LEVELS---------------**/
+    
+        /**---------------GUESS BUTTON,SHOW HINTS-RESET BLOCK----------**/
+        #gno{
+            font-size:1.2em;
+        }
+        
+        #gbtn{
+            font-size:1.2em;
+            margin-left:8px;
+        }
+        
+        .hints-block h2{
+            font-size:1.6em;
+        }
+        
+    
+        #resetbtn{
+            padding:10px 20px;
+            font-size: 1.2em;
+            border-radius:14px;
+            margin-top:20px;
+            margin-left:14px;
+        }
+        
+        
+        .switch {
+            margin-left:20px;
+        }
+        
+        
+        .slider:before {
+            left: 6px;
+        }
+    
+    
+    
+        /**----------------END OF GUESS BUTTON,SHOW HINTS-RESET---------**/
+}
+
+
+/***--------------------END OF MEDIA QUERIES FOR TABS------***/
+
+
+/***--------------------FOR LARGE SIZED MOBILES----------------***/
+
+@media screen and (max-width:425px){
+
+    .main-container{
+        grid-template-rows: 0.5fr 1fr 0.5fr;
+    }
+
+    .hints-guesses-panel{
+        padding:5px;
+    }
+
+
+    /**-------------MAIN-HEADING BLOCK---------------------**/
+    .main-heading-small{
+        font-size: 1.6em;
+    }
+    
+    .main-heading-big{
+        font-size:2em;
+    }
+    /**----------------END OF MAIN-HEADING BLOCK-------------------**/
+
+    /**-------------HINTS-GUESSES PANEL----------------------**/
+    .hints-panel h2, .guess-panel h2{
+        font-size:1.1em;
+    }
+
+    .hints-panel h4, .guess-panel h4{
+        font-size:0.9em;
+    }
+
+    .guess-panel-badge{
+        font-size:0.9em;
+    }
+
+    /**-------------END OF HINTS-GUESSES------------------**/
+
+    /**--------------DIFFICULTY LEVELS--------------------**/
+    .checkmark {
+        height: 16px;
+        width: 16px;
+    }
+    
+    .container-label{
+        font-size:1.1em;
+    }
+    /**--------------END OF DIFFICULTY LEVELS---------------**/
+
+    /**---------------GUESS BUTTON,SHOW HINTS-RESET BLOCK----------**/
+    #gno{
+        border-radius: 50px;
+        padding:0px 20px;
+        font-size:1em;
+    }
+    
+    #gbtn{
+        padding:0px 20px;
+        font-size:1em;
+        border-radius:14px;
+        margin-left:4px;
+    }
+
+    .hints-reset-block{
+        margin-top:20px;
+    }
+    
+    
+    .hints-block h2{
+        font-size:1.4em;
+    }
+    
+
+    #resetbtn{
+        padding:10px 20px;
+        font-size: 1em;
+        border-radius:14px;
+        margin-top:20px;
+        margin-left:14px;
+    }
+    
+    
+    .switch {
+        width: 70px;
+        height: 27px;
+        margin-left:10px;
+    }
+    
+    
+    .slider:before {
+        height: 22px;
+        width: 22px;
+        left: 6px;
+    }
+
+
+
+    /**----------------END OF GUESS BUTTON,SHOW HINTS-RESET---------**/
+
+}
+
+
+/***--------------------END OF LARGE SIZED MOBILES-------------***/
+
+
+
+/****----------------------FOR MEDIUM SIZED MOBILES-----------------****/
+
+@media screen and (max-width:375px){
+    /***---------------MAIN-HEADING BLOCK--------------***/
+    .main-heading-small{
+        font-size:1.3em;
+    }
+    
+    .main-heading-big{
+        font-size:1.7em;
+    }
+
+    /***--------------END OF MAIN-HEADING BLOCK-------------***/
+
+
+    /***-----------------HINTS AND GUESSES BLOCK--------------***/
+    
+    .hints-panel h2, .guess-panel h2{
+        font-size:0.9em;
+    }
+
+    .hints-panel h4, .guess-panel h4{
+        font-size:0.7em;
+    }
+
+    .guess-panel-badge{
+        font-size:0.9em;
+    }
+
+    /***-----------END OF HINTS AND GUESSES BLOCK----------***/
+
+    /**---------------GUESS BUTTON,SHOW HINTS-RESET BLOCK----------**/    
+
+    #mainpanel{
+        margin-top:20px;
+        margin-bottom:5px;
+        height:45px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    
+    #gno{
+        border-radius: 50px;
+        padding:0px 20px;
+        font-size:0.9em;
+    }
+    
+    #gbtn{
+        padding:0px 20px;
+        font-size:0.9em;
+        border-radius:14px;
+        margin-left:4px;
+    }
+    
+    .hints-reset-block{
+        margin-top:15px;
+    }
+    
+    
+    .hints-block h2{
+        font-size:1.2em;
+    }
+    
+
+    #resetbtn{
+        padding:10px 20px;
+        font-size: 0.9em;
+        border-radius:14px;
+        margin-top:20px;
+        margin-left:14px;
+    }
+    
+    
+    .switch {
+        width: 60px;
+        height: 24px;
+        margin-left:10px;
+    }
+    
+    
+    .slider:before {
+        height: 18px;
+        width: 18px;
+        left: 3px;
+    }
+    
+    .checkmark {
+        height: 12px;
+        width: 12px;
+    }
+    
+    .container-label{
+        font-size:0.9em;
+        padding-bottom: 9px;
+    }
+
+    /**----------------END OF GUESS BUTTON,SHOW HINTS-RESET---------**/
+    
+}
+
+
+
+/****----------------------END OF MEDIA QUERIES FOR MEDIUM SIZED MOBILES-----------------------****/
+
+
+
+/****------------------------MEDIA QUERIES FOR SMALL SIZED MOBILES------------------------------****/
+
+@media screen and (max-width:320px){
+    .main-container{
+        grid-template-rows:0.2fr 1fr 0.2fr;
+    }
+    
+
+    /**-------------------MAIN HEADING BLOCK-------------------------------**/
+    .main-heading-small{
+        font-size:1.2em;
+    }
+    
+    .main-heading-big{
+        font-size:1.5em;
+    }
+
+
+    /**-------------------END OF MAIN HEADING BLOCK------------------------**/
+
+
+    /**-------------------GUESSES AND HINTS PANEL--------------------------**/
+    .hints-panel h4, .guess-panel h4{
+        font-size:0.6em;
+    }
+
+    .guess-panel-badge{
+        font-size:0.7em;
+    }
+
+    /**-------------------END OF GUESSES AND HINTS PANEL-------------------**/
+
+    
+    /**-----------------------GUESS BUTTON,SHOW HINTS-RESET BLOCK-----------------------------**/
+    
+    #gno{
+        border-radius: 45px;
+        padding:0px 20px;
+    }
+    
+    #gbtn{
+        padding:0px 20px;
+        font-size:0.8em;
+        border-radius:10px;
+    }
+
+    #mainpanel{
+        height:35px;    
+    }
+    .hints-block h2{
+        font-size:1em;
+    }
+
+    .switch {
+        width: 58px;
+        height: 20px;
+        margin-left:8px;
+    }
+    .slider:before {
+        height: 15px;
+        width: 15px;
+        left: 3px;
+    }
+
+    #resetbtn{
+        padding:8px 16px;
+        font-size: 0.8em;
+        border-radius:14px;
+        margin-top:20px;
+        margin-left:14px;
+    }
+    /**----------------------END OF GUESS-BUTTON, SHOW HINTS-RESET BLOCK-----------------------**/
+}
+
+
+
+
+/****------------------------END OF MEDIA QUERIES FOR SMALL SIZED MOBILES-----------------------****/
