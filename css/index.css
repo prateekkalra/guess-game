@@ -3,7 +3,7 @@ body{
     font-family:Volkhov;
 }
 .blocks{
-    background-color: white;
+    background: #f4f4f4;
     height: auto;
     min-height: 200px;
     height: 350px;
@@ -11,16 +11,32 @@ body{
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: 18.5px;
+    border-radius: 15px;
 }
+
+/* the white color was too sharp on the eye */
+#hintpanel{
+    background: #f4f4f4;
+}
+
 
 #mainpanel{
     padding: 60px;
     background-color: #FF6766 ;
 }
 
+/* align reset button */
+#resetbtn{
+    margin-left: 4.9rem;
+}
+
+.row{
+    margin-left: 40px;
+}
+
 .btn{
-    margin-top: 10px;
-    border-radius: 0px;
+    margin-top: 20px;
+    border-radius: 10px;
     font-size: 25px;
 }
 .btn:focus{
