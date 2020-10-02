@@ -166,19 +166,73 @@ input:checked + .slider:before {
 }
 /*DIFFICULTY RADIO*/
 
-
-
-
-
-
-
-
-
-
-
 .hbox{
     margin-top:2%;
     right: 5%;
 }
 
+.row.headercontent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+}
 
+.row.maincontent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#guesspanel, #hintpanel {
+    width: 25%
+}
+
+#mainpanel {
+    width: 33.33333333%
+}
+
+@media only screen and (max-width: 969px) {
+    .row.headercontent {
+        flex-direction: column;
+    }
+    
+    .row.maincontent {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    #guesspanel, #hintpanel, #mainpanel {
+        width: 100%
+    }
+
+    #diffchoose {
+        display: flex;
+    }
+
+    #diffchoose .container {
+        padding: 0 35px;
+        margin-left: 0;
+        width: auto;
+    }
+
+    .header-diffchoose {
+        order: 1;
+        padding-top: 0;
+        width: auto;
+    }
+
+    .header-hints {
+        order: 2;
+        display: flex;
+        width: auto;
+    }
+
+    .header-hints h2 {
+        margin: 0 20px;
+        right: 0;
+    }
+}
