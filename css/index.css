@@ -1,3 +1,18 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+h2,h1,h3{
+    color: #FF6766
+}
 body{
     background-color: #e2e1e0;
     font-family:Volkhov;
@@ -113,6 +128,7 @@ input:checked + .slider:before {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: #FF6766
 }
 
 /* Hide the browser's default radio button */
