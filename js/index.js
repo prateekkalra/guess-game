@@ -86,7 +86,6 @@ $(document).ready(function () {
         	$('.hbox').hide();
         $('#diffchoose').hide();
         count++;
-
         if(gval<rand){
             toohigh = false;
             toolow = true;
@@ -99,7 +98,10 @@ $(document).ready(function () {
         }
         else{
             $("#myModal").modal();
-            end=true;
+            end="win";
+        }
+        if(count >=10 && !end){
+            end="lose"
         }
         let msg='';
         if(toohigh==true && !end){
@@ -146,7 +148,7 @@ $(document).ready(function () {
         product = "Product of the digits is "+prod+".";
         condigit = cdig+" is one of the digits of the number.";
 
-        if(count==10){
+        if(end==="lose"){
         	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
