@@ -1,9 +1,9 @@
 body{
-    background-color: #e2e1e0;
+    background: radial-gradient(#e3e3e4, #5ff591);;
     font-family:Volkhov;
 }
 .blocks{
-    background-color: white;
+    background-color: rgb(250, 252, 129);
     height: auto;
     min-height: 200px;
     height: 350px;
@@ -15,7 +15,7 @@ body{
 
 #mainpanel{
     padding: 60px;
-    background-color: #FF6766 ;
+    background: #fd7171 ;
 }
 
 .btn{

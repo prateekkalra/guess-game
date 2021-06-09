@@ -1,7 +1,16 @@
 function getrandomnumber(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
-
+$(document).ready(function (){
+    background();
+})
+var back = new Audio('asset/audio/bgmusic.wav');
+var clickbtn = new Audio('asset/audio/click.wav');
+function background(){
+    
+    back.loop = true;
+    back.play();
+}
 $(document).ready(function () {
     $('#tsfd').hide();
     let rand = getrandomnumber(1,100);
@@ -78,6 +87,7 @@ $(document).ready(function () {
     let nog=10;
     let count=0;
     (guessbtn).click(function () {
+        clickbtn.play();
         let gval = input.val();
   		/*console.log(count);
   		console.log(nog);*/
@@ -98,6 +108,9 @@ $(document).ready(function () {
             end=false;
         }
         else{
+            back.pause();
+            var victorysound = new Audio('asset/audio/win.wav');
+            victorysound.play();
             $("#myModal").modal();
             end=true;
         }
@@ -147,6 +160,9 @@ $(document).ready(function () {
         condigit = cdig+" is one of the digits of the number.";
 
         if(count==10){
+            back.pause();
+            var lostsound = new Audio('asset/audio/gameover.wav');
+            lostsound.play();
         	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
