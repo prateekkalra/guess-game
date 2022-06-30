@@ -34,43 +34,28 @@ $(document).ready(function () {
         }
     });
     let maxstr = '';
+    
     diffbox.change(function () {
-        let diff = $('input[name=radio]:checked').val();
+        let diff = parseInt($('input[name=radio]:checked').val());
         // $('#resetbtn').click();
-        switch (diff){
-            case '0':
-                rand = getrandomnumber(1,10);
-                maxstr = '10';
-                if(ischecked){
-                    cbox.click();
-                }
-                $('.hbox').hide();
-                break;
-            case '1':
-                rand = getrandomnumber(1,100);
-                maxstr = '100';
-                if(!ischecked){
-                    cbox.click();
-                }
-                $('.hbox').show();
-                break;
-            case '2':
-                rand = getrandomnumber(1,1000);
-                maxstr = '1000';
-                if(!ischecked){
-                    cbox.click();
-                }
-                $('.hbox').show();
-                break;
-            case '3':
-                rand = getrandomnumber(1,10000);
-                maxstr = '10000';
-                if(!ischecked){
-                    cbox.click();
-                }
-                $('.hbox').show();
-                break;
+
+        // Generate new random number
+        maxnumber = Math.pow(10, (diff + 1));
+        rand = getrandomnumber(1, maxnumber);
+
+        // If set to Easy mode, hide the hint slider
+        if(diff <= 0) {
+            cbox[0].checked = false;
+            $('.hbox').hide();
         }
+        else {
+            cbox[0].checked = true;
+            $('.hbox').show();
+        }
+        cbox.change();
+
+        // Update maximum number string
+        maxstr = maxnumber.toLocaleString("en");
         max.html(maxstr);
     });
     
