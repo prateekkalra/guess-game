@@ -34,13 +34,15 @@ $(document).ready(function () {
         }
     });
     let maxstr = '';
+    
     diffbox.change(function () {
         let diff = parseInt($('input[name=radio]:checked').val());
         // $('#resetbtn').click();
 
-        maxnumber = 10 ** (diff + 1);
+        // Generate new random number
+        maxnumber = Math.pow(10, (diff + 1));
         rand = getrandomnumber(1, maxnumber);
-        
+
         // If set to Easy mode, hide the hint slider
         if(diff <= 0) {
             cbox[0].checked = false;
@@ -52,7 +54,8 @@ $(document).ready(function () {
         }
         cbox.change();
 
-        maxstr = maxnumber.toString();
+        // Update maximum number string
+        maxstr = maxnumber.toLocaleString("en");
         max.html(maxstr);
     });
     
