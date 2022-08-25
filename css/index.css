@@ -1,43 +1,50 @@
-body{
+body {
     background-color: #e2e1e0;
-    font-family:Volkhov;
+    font-family: Volkhov;
+    margin: auto;
 }
-.blocks{
+
+.blocks {
     background-color: white;
     height: auto;
     min-height: 200px;
     height: 350px;
     /*width: 700px;*/
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     margin: 18.5px;
 }
 
-#mainpanel{
+#mainpanel {
     padding: 60px;
-    background-color: #FF6766 ;
+    background-color: #FF6766;
 }
 
-.btn{
+.btn {
     margin-top: 10px;
     border-radius: 0px;
     font-size: 25px;
 }
-.btn:focus{
+
+.btn:focus {
     outline: none;
 }
-#gno{
+
+#gno {
     border-radius: 50px;
     width: 70%;
 }
 
-.badge{
+.badge {
     font-size: 20px;
     border-radius: 500px;
 }
 
-
-
+/* Add Border Radius to Guesses and Hints Panels */
+#guesspanel,
+#hintpanel {
+    border-radius: 1%;
+}
 
 /*HINT SWITCH*/
 
@@ -48,7 +55,9 @@ body{
     height: 34px;
 }
 
-.switch input {display:none;}
+.switch input {
+    display: none;
+}
 
 .slider {
     position: absolute;
@@ -74,15 +83,15 @@ body{
     transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -95,6 +104,7 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 /*HINT SWITCH*/
 
 
@@ -134,12 +144,12 @@ input:checked + .slider:before {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
     background-color: #2196F3;
 }
 
@@ -151,7 +161,7 @@ input:checked + .slider:before {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
     display: block;
 }
 
@@ -164,21 +174,23 @@ input:checked + .slider:before {
     border-radius: 50%;
     background: white;
 }
+
 /*DIFFICULTY RADIO*/
 
-
-
-
-
-
-
-
-
-
-
-.hbox{
-    margin-top:2%;
-    right: 5%;
+/* Centering Main Panels */
+.center-block {
+    margin-left: 2%;
 }
 
 
+
+
+
+
+
+
+
+.hbox {
+    margin-top: 2%;
+    right: 5%;
+}
