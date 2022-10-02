@@ -4,18 +4,18 @@ body{
 }
 .blocks{
     background-color: white;
-    height: auto;
+    height:auto;
     min-height: 200px;
     height: 350px;
     /*width: 700px;*/
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
+    margin: 18.4px;
 }
 
 #mainpanel{
     padding: 60px;
-    background-color: #FF6766 ;
+    background-color: #FF6767 ;
 }
 
 .btn{
@@ -127,9 +127,9 @@ input:checked + .slider:before {
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
+    height: 26px;
+    width: 26px;
+    background-color: #eeeeee;
     border-radius: 50%;
 }
 
@@ -157,10 +157,10 @@ input:checked + .slider:before {
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
+    top: 8px;
+    left: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: white;
 }
@@ -178,7 +178,7 @@ input:checked + .slider:before {
 
 .hbox{
     margin-top:2%;
-    right: 5%;
+    right: 4%;
 }
 
 
