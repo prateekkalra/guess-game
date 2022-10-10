@@ -1,9 +1,11 @@
+// Generates a random number between the min and max value
 function getrandomnumber(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
 $(document).ready(function () {
     $('#tsfd').hide();
+
     let rand = getrandomnumber(1,100);
 
     let guesspanel = $('#guesspanel');
@@ -37,6 +39,8 @@ $(document).ready(function () {
     diffbox.change(function () {
         let diff = $('input[name=radio]:checked').val();
         // $('#resetbtn').click();
+
+        // Generates a random number based on the difficulty level
         switch (diff){
             case '0':
                 rand = getrandomnumber(1,10);
@@ -87,6 +91,7 @@ $(document).ready(function () {
         $('#diffchoose').hide();
         count++;
 
+        // gives feedback on the hint such as: too high, too low
         if(gval<rand){
             toohigh = false;
             toolow = true;
@@ -121,6 +126,7 @@ $(document).ready(function () {
         let r2 = Math.floor(Math.random()*randstr.length);
         cdig = randstr[r2];
 
+        // generates hints
         let div2,div3,div5,product,condigit;
         if(rand%2==0){
             div2="The number is even.";
