@@ -164,21 +164,19 @@ input:checked + .slider:before {
     border-radius: 50%;
     background: white;
 }
+
+
 /*DIFFICULTY RADIO*/
-
-
-
-
-
-
-
-
-
-
 
 .hbox{
     margin-top:2%;
     right: 5%;
 }
 
-
+/*border radius */
+#guesspanel,#hintpanel,#mainpanel{
+    border-radius: 9px;
+}
+#resetbtn,#gbtn{
+    border-radius: 8px;
+}
