@@ -15,7 +15,7 @@ body{
 
 #mainpanel{
     padding: 60px;
-    background-color: #FF6766 ;
+    background-color: #084244;
 }
 
 .btn{
@@ -27,8 +27,9 @@ body{
     outline: none;
 }
 #gno{
-    border-radius: 50px;
+    border-radius: 8px;
     width: 70%;
+    border: 3px #e0cb0a solid;
 }
 
 .badge{
@@ -168,17 +169,14 @@ input:checked + .slider:before {
 
 
 
-
-
-
-
-
-
-
-
 .hbox{
     margin-top:2%;
     right: 5%;
 }
 
 
+
+/* changes */
+.row{
+    margin-left: 11px !important;
+}
