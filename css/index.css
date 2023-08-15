@@ -1,184 +1,165 @@
-body{
-    background-color: #e2e1e0;
-    font-family:Volkhov;
-}
-.blocks{
-    background-color: white;
-    height: auto;
-    min-height: 200px;
-    height: 350px;
-    /*width: 700px;*/
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    margin: 18.5px;
-}
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap");
 
-#mainpanel{
-    padding: 60px;
-    background-color: #FF6766 ;
+/* Global Styles */
+body {
+  background-color: #f0f0f0;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
 }
 
-.btn{
-    margin-top: 10px;
-    border-radius: 0px;
-    font-size: 25px;
-}
-.btn:focus{
-    outline: none;
-}
-#gno{
-    border-radius: 50px;
-    width: 70%;
-}
-
-.badge{
-    font-size: 20px;
-    border-radius: 500px;
+/* Main Container */
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "main-heading hints-guesses"
+    "options-action-block hints-guesses";
+  grid-template-columns: minmax(400px, 1fr) minmax(300px, 0.7fr);
+  row-gap: 20px;
+  padding: 20px;
 }
 
-
-
-
-/*HINT SWITCH*/
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+/* Main Heading */
+.main-heading {
+  grid-area: main-heading;
+  color: #333;
+  text-align: center;
 }
 
-.switch input {display:none;}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+.main-heading h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+.main-heading h2 {
+  font-size: 1.8em;
+  font-weight: 300;
 }
 
-input:checked + .slider {
-    background-color: #2196F3;
+/* Difficulty Levels and Guess Block */
+.options-action-block {
+  grid-area: options-action-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+#difficulty-levels {
+  width: 100%;
+  color: #555;
+  text-align: center;
 }
 
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-/*HINT SWITCH*/
-
-
-
-/*DIFFICULTY RADIO*/
-/* The container */
 .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    padding-right: 200px;
-    margin-left: 40%;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: flex;
+  align-items: center;
 }
 
-/* Hide the browser's default radio button */
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+.container-checkmark {
+  margin-right: 10px;
 }
 
-/* Create a custom radio button */
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
+/* Guess Action */
+#mainpanel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-    background-color: #2196F3;
+#gno {
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 1.2em;
+  margin-right: 8px;
+  border: 0;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+#gbtn {
+  padding: 8px 20px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  background-color: #FF6766;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
 }
 
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-    display: block;
+.hints-reset-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
-}
-/*DIFFICULTY RADIO*/
-
-
-
-
-
-
-
-
-
-
-
-.hbox{
-    margin-top:2%;
-    right: 5%;
+.hints-block h2 {
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
+#resetbtn {
+  background-color: #ddc632;
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
 
+/* Hints and Guesses Panel */
+.hints-guesses-panel {
+  grid-area: hints-guesses;
+  display: grid;
+  grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr);
+  row-gap: 20px;
+}
+
+.hints-panel, .guess-panel {
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hints-panel h2, .guess-panel h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.hints-panel h4, .guess-panel h4 {
+  font-size: 1.2em;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .main-container {
+    grid-template-areas:
+      "main-heading"
+      "options-action-block"
+      "hints-guesses";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+}
