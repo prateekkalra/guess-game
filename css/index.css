@@ -4,6 +4,7 @@ body{
 }
 .blocks{
     background-color: white;
+    border: 3px solid #FF6766;
     height: auto;
     min-height: 200px;
     height: 350px;
