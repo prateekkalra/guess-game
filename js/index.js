@@ -2,6 +2,8 @@ function getrandomnumber(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+
+
 $(document).ready(function () {
     $('#tsfd').hide();
     let rand = getrandomnumber(1,100);
@@ -17,6 +19,7 @@ $(document).ready(function () {
     let toohigh = false,toolow=false;
     let diffbox = $('input[name=radio]:radio');
     let max = $('#max');
+    
     input.on('keyup',function (event) {
        if(event.keyCode===13){
            guessbtn.click();
@@ -81,6 +84,10 @@ $(document).ready(function () {
         let gval = input.val();
   		/*console.log(count);
   		console.log(nog);*/
+          if (isNaN(gval) || gval === "") {
+            alert("Please enter a valid number!");
+            return;
+        }
 
         if(String(gval)!=''&&count<10&&end==false) {
         	$('.hbox').hide();
