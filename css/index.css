@@ -1,6 +1,12 @@
 body{
-    background-color: #e2e1e0;
-    font-family:Volkhov;
+    font-family: Volkhov;
+    background-image: url("https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1400&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 .blocks{
     background-color: white;
