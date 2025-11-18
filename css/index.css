@@ -166,8 +166,52 @@ input:checked + .slider:before {
 }
 /*DIFFICULTY RADIO*/
 
+@media(max-width: 576px) {
+  #guesspanel, #mainpanel, #hintpanel {
+    height: 22vh; /* roughly one-third of screen height each */
+  }
+}
 
-
+@media(max-width: 576px) {
+  #gno {
+    width: 100%;
+    height: 40%;
+    font-size: large; /* roughly one-third of screen height each */
+  }
+}
+@media (max-width: 576px) {
+  .row > div {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #resetbtn{
+    position: relative;
+    right: -13%;
+  }
+  #diffchoose{
+    position: relative;
+    right: 10%;
+  }
+  .main-massage{
+    position: relative;
+    right: 30%;
+  }
+  #diffchoose label.container {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* Remove or reset any large right padding or margin */
+  .col-xs-6 {
+    right: -5% !important;
+  }
+  .hbox {
+    right: auto !important;
+    margin-top: 5%;
+  }
+  .optionsrow {
+font-size: small;  }
+}
 
 
 
@@ -180,5 +224,7 @@ input:checked + .slider:before {
     margin-top:2%;
     right: 5%;
 }
-
+.hbox h2{
+    text-wrap: wrap;
+}
 
