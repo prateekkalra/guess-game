@@ -2,123 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Guess The Number</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number - 3D Challenge</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Acme|Volkhov" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-xs-3 text-center" style="padding-top: 30px">
-                <div id="diffchoose">
-                    <label class="container">Easy
-                        <input type="radio"  name="radio" class="dif" value="0">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Medium
-                        <input type="radio" checked="checked" name="radio" class="dif" value="1">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Hard
-                        <input type="radio" name="radio" class="dif" value="2">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Expert
-                        <input type="radio" name="radio" class="dif" value="3">
-                        <span class="checkmark"></span>
-                    </label>
+    <!-- 3D Floating Decorative Shapes in Background -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="game-wrapper">
+        <!-- Main Game Container -->
+        <div class="container-fluid">
+            <!-- Header section -->
+            <header class="game-header text-center">
+                <h1 class="game-title">Guess The Number</h1>
+                
+                <div class="prompt-box-3d">
+                    <h2 class="prompt-desc">I'm thinking of a number between</h2>
+                    <h1 class="prompt-range">1 and <span id="max">100</span></h1>
+                    <h3 class="prompt-sub">Can you figure it out in 10 attempts?</h3>
+                </div>
+            </header>
+
+            <!-- Control Bar (Difficulty and Hint Switches) -->
+            <div class="controls-card-3d">
+                <div class="control-section">
+                    <span class="control-label">Difficulty</span>
+                    <div id="diffchoose">
+                        <label class="diff-btn">
+                            <input type="radio" name="radio" class="dif" value="0">
+                            <span class="diff-text">Easy</span>
+                        </label>
+                        <label class="diff-btn">
+                            <input type="radio" checked="checked" name="radio" class="dif" value="1">
+                            <span class="diff-text">Medium</span>
+                        </label>
+                        <label class="diff-btn">
+                            <input type="radio" name="radio" class="dif" value="2">
+                            <span class="diff-text">Hard</span>
+                        </label>
+                        <label class="diff-btn">
+                            <input type="radio" name="radio" class="dif" value="3">
+                            <span class="diff-text">Expert</span>
+                        </label>
+                    </div>
                 </div>
 
-            </div>
-            <div class="col-xs-6" style="right: 65px; font-family: Acme!important;">
-                <h2>
-                    I'm thinking of a number between
-                </h2>
-                <h1>1 and <span id="max">100</span></h1>
-                <h3 >
-                    You have ten guesses<br>
-                    Can you figure out what it is?
-                </h3>
-            </div>
-            <div class="col-xs-3 hbox">
-                <h2>Show Hints</h2>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
+                <div class="control-section hbox">
+                    <span class="control-label">Hints</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
             </div>
 
-        </div>
-        <div class="text-center" style="margin-left: -120px">
-            <a id="resetbtn" class="btn btn-warning">Reset</a>
-        </div>
-        <div class="center-block">
-            <div class="row">
-                <div id="guesspanel" class="blocks col-xs-3 text-center">
+            <!-- Action buttons (Reset Game) -->
+            <div class="reset-wrapper text-center">
+                <a id="resetbtn" class="btn-3d btn-warning-3d">Reset Game</a>
+            </div>
 
-                    <h2>Guesses  <span id="guesses" class="badge" style="margin-bottom: 5px">0</span></h2>
+            <!-- Main Interactive Area -->
+            <div class="game-panels-grid">
+                <!-- Guesses Panel (Left) -->
+                <div id="guesspanel" class="panel-3d">
+                    <div class="panel-header">
+                        <h2>Guesses</h2>
+                        <span id="guesses" class="badge-3d">0</span>
+                    </div>
                     <div class="gcontent">
-
-                    </div>
-                </div>
-                <div id="mainpanel" class="blocks col-xs-4 text-center " style="padding-top: 130px">
-                    <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="form-control center-block" placeholder="Type Your Guess Here!">
-
-                    <a id="gbtn" class="btn btn-danger text-uppercase">Guess</a>
-
-                </div>
-                <div id="hintpanel" class="blocks col-xs-4" style="width: 30%">
-                    <h2 class="text-center">Hints</h2><br><br>
-                    <div class="hcontent center-block text-center">
-
-                    </div>
-                    <h1 id="tsfd" class="text-center" style="color: blue" >Too smart for hints</h1>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog" >
-                <div class="modal-content" style="background-color: #00a86b">
-
-                    <div class="modal-body">
-                        <h1 class="text-center">You Won!</h1>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="clw" type="button" class="btn btn-danger center-block" data-dismiss="modal">Play Again</button>
+                        <!-- Placed guess list items will go here -->
                     </div>
                 </div>
 
-            </div>
-        </div>
-        <div class="modal fade" id="myModal2" role="dialog">
-            <div class="modal-dialog" >
-                <div class="modal-content" style="background-color: crimson">
-
-                    <div class="modal-body">
-                        <h1 class="text-center">You lost!</h1>
-                        <h2 id="lost_msg" class="text-center"></h1>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="cll" type="button" class="btn btn-success center-block" data-dismiss="modal">Try Again</button>
+                <!-- Play Board Panel (Center) -->
+                <div id="mainpanel" class="panel-3d play-board-panel">
+                    <div class="play-inner">
+                        <label for="gno" class="guess-input-label">Type Your Guess Here</label>
+                        <input id="gno" type="number" step="1" min="1" oninput="validity.valid||(value='');" class="input-3d" placeholder="e.g. 42">
+                        <a id="gbtn" class="btn-3d btn-danger-3d">Submit Guess</a>
                     </div>
                 </div>
 
+                <!-- Hints Display Panel (Right) -->
+                <div id="hintpanel" class="panel-3d">
+                    <div class="panel-header">
+                        <h2>Hints</h2>
+                    </div>
+                    <div class="hcontent">
+                        <!-- Generated hints will go here -->
+                    </div>
+                    <div id="tsfd" class="no-hints-container text-center">
+                        <div class="no-hints-icon">🧠</div>
+                        <h3>Too smart for hints</h3>
+                        <p>Toggle "Hints" on to see automatic game help.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Modals -->
+    <!-- Win Modal -->
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-3d win-modal">
+                <div class="modal-body text-center">
+                    <div class="modal-icon-3d">🏆</div>
+                    <h1 class="modal-title">You Won!</h1>
+                    <p class="modal-text">Spectacular work! You found the secret number.</p>
+                </div>
+                <div class="modal-footer text-center">
+                    <button id="clw" type="button" class="btn-3d btn-success-3d btn-block" data-dismiss="modal">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Loss Modal -->
+    <div class="modal fade" id="myModal2" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-3d loss-modal">
+                <div class="modal-body text-center">
+                    <div class="modal-icon-3d">💥</div>
+                    <h1 class="modal-title">You Lost!</h1>
+                    <p id="lost_msg" class="modal-text"></p>
+                </div>
+                <div class="modal-footer text-center">
+                    <button id="cll" type="button" class="btn-3d btn-danger-3d btn-block" data-dismiss="modal">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
