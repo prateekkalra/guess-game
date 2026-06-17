@@ -102,14 +102,18 @@ $(document).ready(function () {
             end=true;
         }
         let msg='';
+        let msgClass='';
         if(toohigh==true && !end){
             msg='Too High';
+            msgClass='high';
         }
         else if(toolow==true && !end){
             msg='Too Low';
+            msgClass='low';
         }
 		else{
 			msg='Correct';
+            msgClass='correct';
 		}
 
         let prod=1,cdig=null;
@@ -150,23 +154,23 @@ $(document).ready(function () {
         	$('#lost_msg').text('The number was '+rand);
             $("#myModal2").modal();
         }
-            $('.gcontent').append('<h4>'+gval+'('+msg+')'+'<h4>');
+            $('.gcontent').append('<h4 class="' + msgClass + '"><span>' + gval + '</span> <span class="guess-msg">' + msg + '</span></h4>');
             if(ischecked){
                 switch(nog){
                     case 10:
-                        $('.hcontent').append('<h4>'+div2+'<h4>');
+                        $('.hcontent').append('<h4>' + div2 + '</h4>');
                         break;
                     case 8:
-                        $('.hcontent').append('<h4>'+product+'<h4>');
+                        $('.hcontent').append('<h4>' + product + '</h4>');
                         break;
                     case 6:
-                        $('.hcontent').append('<h4>'+div3+'<h4>');
+                        $('.hcontent').append('<h4>' + div3 + '</h4>');
                         break;
                     case 4:
-                        $('.hcontent').append('<h4>'+div5+'<h4>');
+                        $('.hcontent').append('<h4>' + div5 + '</h4>');
                         break;
                     case 2:
-                        $('.hcontent').append('<h4>'+condigit+'<h4>');
+                        $('.hcontent').append('<h4>' + condigit + '</h4>');
                         break;
                 }
             }
